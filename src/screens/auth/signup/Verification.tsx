@@ -13,7 +13,11 @@ const Verification = ({ navigation, route }: any) => {
     const [value, setValue] = useState("");
 
     useEffect(() => {
-        value.length === 6 && navigation.navigate("UserDetails")
+        // value.length === 6 && navigation.navigate("UserDetails")
+        setTimeout(() => {
+            navigation.navigate("UserDetails")
+        }, 100);
+
     }, [value])
 
 

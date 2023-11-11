@@ -16,7 +16,7 @@ const Verification = ({ navigation, route }: any) => {
         // value.length === 6 && navigation.navigate("UserDetails")
         setTimeout(() => {
             navigation.navigate("UserDetails")
-        }, 100);
+        }, 200);
 
     }, [value])
 

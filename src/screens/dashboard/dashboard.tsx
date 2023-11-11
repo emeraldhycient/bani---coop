@@ -60,14 +60,35 @@ const Dashboard = ({ navigation }: any) => {
                 <View style={styles.card}>
                     <View style={{ width: "70%" }}>
                         <CustomText style={{ fontSize: 14, fontWeight: '400', lineHeight: 24, textAlign: "left", color: Colors.primary }}>Account Verification</CustomText>
-                        <CustomText style={{ fontSize: 14, fontWeight: '400', lineHeight: 24, textAlign: "left", color: Colors.grey, marginVertical:10 }}>Verify your account and enjoy no limit on transactions.</CustomText>
-                        <View style={{ flexDirection: "row", alignItems: "center"}}>
+                        <CustomText style={{ fontSize: 14, fontWeight: '400', lineHeight: 24, textAlign: "left", color: Colors.grey, marginVertical: 10 }}>Verify your account and enjoy no limit on transactions.</CustomText>
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
                             <CustomText style={{ fontSize: 14, fontWeight: '400', lineHeight: 24, textAlign: "left", color: Colors.primary }}>Get Started</CustomText>
                             <Feather name={"arrow-right"} color={Colors.primary} style={{ marginLeft: 10 }} />
                         </View>
                     </View>
                     <Image source={require("../../../assets/images/dashboard/time.png")} style={{ height: 100, width: "30%", marginRight: 5 }} />
                 </View>
+                <View>
+                    <View style={{ alignItems: "center", justifyContent: "space-between", flexDirection: "row", marginTop: 20 }}>
+                        <CustomText style={styles.title}>Quick Actions</CustomText>
+                        <CustomText style={styles.subtext}>View All</CustomText>
+                    </View>
+                    <View style={styles.card2}>
+                        <View style={{ flexDirection: "column", alignItems: "center" }}>
+                            <Image source={require("../../../assets/images/dashboard/phone.png")} style={{ height: 40, width: 40, marginRight: 5 }} />
+                            <CustomText style={styles.quickActionTitle}>Buy Airtime</CustomText>
+                        </View>
+                        <View style={{ flexDirection: "column", alignItems: "center" }}>
+                            <Image source={require("../../../assets/images/dashboard/bill.png")} style={{ height: 40, width: 40, marginRight: 5 }} />
+                            <CustomText style={styles.quickActionTitle}>Bills & Utilities</CustomText>
+                        </View>
+                        <View style={{ flexDirection: "column", alignItems: "center" }}>
+                            <Image source={require("../../../assets/images/dashboard/savings.png")} style={{ height: 40, width: 40, marginRight: 5 }} />
+                            <CustomText style={styles.quickActionTitle}>Easy Savings</CustomText>
+                        </View>
+                    </View>
+                </View>
+
             </View>
         </ScrollView>
     )
@@ -103,6 +124,26 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
+    },
+    card2: {
+        backgroundColor: "#6922D105",
+        width: "100%",
+        height: 104,
+        borderRadius: 20,
+        marginTop: 10,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        borderWidth: 1,
+        borderColor: "#6922D11A",
+        paddingHorizontal: 10
+    },
+    quickActionTitle: {
+        fontSize: 12,
+        fontWeight: "500",
+        lineHeight: 20,
+        textAlign: "center",
+        marginTop:5
     }
 })
 

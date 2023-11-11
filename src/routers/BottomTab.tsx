@@ -37,7 +37,7 @@ function BottomTab() {
       />
       <Screen
         name="cards"
-        component={MapScreen}
+        component={Dashboard}
         options={{
           headerShown: false,
           tabBarLabel: "Cards",
@@ -52,7 +52,7 @@ function BottomTab() {
      
       <Screen
         name="loans"
-        component={Trending}
+        component={Dashboard}
         options={{
           headerShown: false,
           tabBarLabel: "Loans",
@@ -67,7 +67,7 @@ function BottomTab() {
      
       <Screen
         name="cells"
-        component={Trending}
+        component={Dashboard}
         options={{
           headerShown: false,
           tabBarLabel: "Cells",

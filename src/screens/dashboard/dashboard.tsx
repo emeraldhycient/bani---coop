@@ -88,7 +88,12 @@ const Dashboard = ({ navigation }: any) => {
                         </View>
                     </View>
                 </View>
-
+                <View>
+                    <View style={{ alignItems: "center", justifyContent: "space-between", flexDirection: "row", marginTop: 20 }}>
+                        <CustomText style={styles.title}>Recent Transaction</CustomText>
+                        <CustomText style={styles.subtext}>View All</CustomText>
+                    </View>
+                </View>
             </View>
         </ScrollView>
     )
@@ -143,7 +148,7 @@ const styles = StyleSheet.create({
         fontWeight: "500",
         lineHeight: 20,
         textAlign: "center",
-        marginTop:5
+        marginTop: 5
     }
 })
 

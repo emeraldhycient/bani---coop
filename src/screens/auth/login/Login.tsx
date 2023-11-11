@@ -16,7 +16,7 @@ const Login = ({ navigation }: any) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: Colors.white }}>
-      <CustomHeader title='Sign in to GeoCast' leftIcon={<MaterialCommunityIcons name='arrow-left' size={20} />} onLeftPress={() => navigation.goBack()} />
+      <CustomHeader title=' ' leftIcon={<MaterialCommunityIcons name='arrow-left' size={20} />} onLeftPress={() => navigation.goBack()} />
       <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
         <CustomText style={{ marginBottom: 10 }}>Email Address</CustomText>
         <CustomTextInput placeholder="Enter your email address" />
@@ -31,7 +31,10 @@ const Login = ({ navigation }: any) => {
             color={Colors.gray}
           />
         } />
-        <View style={{ width: "100%", marginHorizontal: "auto", height: 160, flexDirection: "column", justifyContent: "space-between", marginTop: 40 }}>
+        <TouchableRipple onPress={() => navigation.navigate("ForgotPassword")}>
+          <CustomText style={{ marginVertical: 10, textAlign: "left", fontSize: 14, fontWeight: "400", color: Colors.primary }}>Forgot Your Password?</CustomText>
+        </TouchableRipple>
+        <View style={{ width: "100%", marginHorizontal: "auto", height: 120, flexDirection: "column", justifyContent: "space-between", marginTop: 20 }}>
           <Button title='Sign in to your account' onPress={() => setIsAuthenticated(true)} br={6} h={50} color={Colors.white} bg={Colors.primary} />
           <Button bg='white' onPress={() => navigation.navigate("Login")} style={{ backgroundColor: "white", borderColor: Colors.primary, borderWidth: 0.5, width: "100%", borderRadius: 6, height: 50, justifyContent: "center", alignItems: "center", alignSelf: "center" }} >
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -39,9 +42,6 @@ const Login = ({ navigation }: any) => {
               <MaterialCommunityIcons name='fingerprint' size={20} style={{ marginLeft: 10 }} color={Colors.primary} />
             </View>
           </Button>
-          <TouchableRipple onPress={() => navigation.navigate("ForgotPassword")}>
-            <CustomText style={{ marginVertical: 10, textAlign: "center", fontSize: 14, fontWeight: "400" }}>I forgot my password </CustomText>
-          </TouchableRipple>
         </View>
       </View>
     </View>

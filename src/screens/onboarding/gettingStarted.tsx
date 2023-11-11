@@ -1,27 +1,31 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import Colors from '../../theme/colors'
-import ScrollCard from '../../components/auth/scrollCard'
-import SelectOnboarding from '../../components/auth/selectAction'
+import Button from '../../components/common/button'
+import CustomText from '../../components/common/CustomText'
+import Feather from 'react-native-vector-icons/Feather'
 
 const GettingStarted = ({ navigation }: any) => {
-    const [page, setpage] = useState(0)
-  
     return (
         <View style={styles.container}>
-            {
-                page === 0 && 
-            <ScrollCard image={require('../../../assets/images/onboarding/img1.png')} title={'Live Streaming'} description={'Go beyond traditional streaming with Geocast. Share your real-time experiences, discoveries, and adventures with the world. Showcase your creativity, talents, and interests to a global audience.'} index={page} onPress={()=> setpage(page+1)} />
-            }
-            {
-                page === 1 && 
-                <ScrollCard image={require('../../../assets/images/onboarding/img2.png')} title={'Real-Time Mapping'} description={"Geocast leverages the power of Google Maps to provide you with accurate and up-to-date maps. Whether you're an adventurer, travel enthusiast, or simply looking for your way around town."} index={page} onPress={()=> setpage(page+1)} />
-            }
-            {
-                page === 2 && 
-                <SelectOnboarding/>
-            }
-         
+            <View style={{ height: '85%', width: '100%', justifyContent: "center", alignItems: "center" }}>
+                <Image source={require('../../../assets/images/onboarding/phone.png')} style={styles.image} />
+            </View>
+            <View style={{ flexDirection: "column", justifyContent: "flex-end", height: '15%', width: '100%' }}>
+                <View style={styles.buttonsHolder}>
+                    <View style={{ width: "50%" }}>
+                        <Button onPress={() => navigation.navigate("SignUp")} br={1} h={70} bg={"#6922D10A"} >
+                            <View style={{ flexDirection: 'row', alignItems: "center" }}>
+                                <CustomText color={Colors.primary}>Open Account</CustomText>
+                                <Feather name='arrow-up-right' color={Colors.primary} />
+                            </View>
+                        </Button>
+                    </View>
+                    <View style={{ width: "50%" }}>
+                        <Button title='Sign In' onPress={() => navigation.navigate("Login")} br={1} h={70} color={Colors.white} bg={Colors.primary} />
+                    </View>
+                </View>
+            </View>
         </View>
     )
 }
@@ -40,7 +44,7 @@ const styles = StyleSheet.create({
         height: '75%',
         width: '100%',
         resizeMode: 'contain',
-        marginTop:20
+        marginTop: 20
     },
     buttonsHolder: {
         flexDirection: 'row',

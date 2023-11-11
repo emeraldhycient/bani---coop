@@ -36,53 +36,46 @@ function BottomTab() {
         } as never}
       />
       <Screen
-        name="map"
+        name="cards"
         component={MapScreen}
         options={{
           headerShown: false,
-          tabBarLabel: "Map",
+          tabBarLabel: "Cards",
           tabBarIcon: ({ color, focused }: any) => (
             focused ?
-              <Image source={require("../../assets/images/bottombar/search-a.png")} style={{ height: 30, width: 30 }} />
+              <Image source={require("../../assets/images/bottombar/card.png")} style={{ height: 30, width: 30 }} />
               :
-              <Image source={require("../../assets/images/bottombar/search-in.png")} style={{ height: 20, width: 20 }} />
+              <Image source={require("../../assets/images/bottombar/card.png")} style={{ height: 30, width: 30 }} />
           ),
         } as never}
       />
+     
       <Screen
-        name="stream"
-        component={Dashboard}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <View
-              style={{
-                position: 'absolute',
-                bottom: -13, // space from bottombar
-                height: 40,
-                width: 40,
-                borderRadius: 68,
-                // backgroundColor: 'blue', // your color
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <Image source={require("../../assets/images/bottombar/stream.png")} style={{ height: 50, width: 50 }} />
-            </View>
-          ),
-          tabBarLabel: '',
-        }}
-      />
-      <Screen
-        name="trending"
+        name="loans"
         component={Trending}
         options={{
           headerShown: false,
-          tabBarLabel: "Trending",
+          tabBarLabel: "Loans",
           tabBarIcon: ({ color, focused }: any) => (
             focused ?
-              <Image source={require("../../assets/images/bottombar/trending-a.png")} style={{ height: 30, width: 30 }} />
+              <Image source={require("../../assets/images/bottombar/loans.png")} style={{ height: 30, width: 30 }} />
               :
-              <Image source={require("../../assets/images/bottombar/trending.png")} style={{ height: 20, width: 20 }} />
+              <Image source={require("../../assets/images/bottombar/loans.png")} style={{ height: 30, width: 30 }} />
+          ),
+        } as never}
+      />
+     
+      <Screen
+        name="cells"
+        component={Trending}
+        options={{
+          headerShown: false,
+          tabBarLabel: "Cells",
+          tabBarIcon: ({ color, focused }: any) => (
+            focused ?
+              <Image source={require("../../assets/images/bottombar/cells.png")} style={{ height: 30, width: 30 }} />
+              :
+              <Image source={require("../../assets/images/bottombar/cells.png")} style={{ height: 30, width: 30 }} />
           ),
         } as never}
       />

@@ -17,7 +17,8 @@ const Login = ({ navigation }: any) => {
   return (
     <View style={{ flex: 1, backgroundColor: Colors.white }}>
       <CustomHeader title=' ' leftIcon={<MaterialCommunityIcons name='arrow-left' size={20} />} onLeftPress={() => navigation.goBack()} />
-      <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
+      <View style={{ paddingHorizontal: 20}}>
+        <CustomText style={styles.header}>Welcome Back ! 👋</CustomText>
         <CustomText style={{ marginBottom: 10 }}>Email Address</CustomText>
         <CustomTextInput placeholder="Enter your email address" />
         <CustomText style={{ marginVertical: 10 }}>Password </CustomText>
@@ -50,4 +51,12 @@ const Login = ({ navigation }: any) => {
 
 export default Login
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  header: {
+    fontSize: 16,
+    fontWeight: "500",
+    lineHeight: 32,
+    textAlign: "left",
+    marginBottom: 30
+  }
+})

@@ -17,33 +17,21 @@ const UserDetails = ({ navigation }: any) => {
     return (
         <View style={{ flex: 1, backgroundColor: Colors.white }}>
             <CustomHeader title='User Details' leftIcon={<MaterialCommunityIcons name='arrow-left' size={20} />} onLeftPress={() => navigation.goBack()} />
-            <View style={{ paddingHorizontal: 20, paddingTop: 20 }}>
-                <CustomText style={{ marginBottom: 10 }}>Country</CustomText>
-                <View style={{borderColor:Colors.gray,borderWidth:0.3,height:50,borderRadius:8,justifyContent:"center",paddingLeft:5}}>
-                    <CountryPicker
-                        countryCode='US'
-                        withCountryNameButton={true}
-                        onSelect={(country) => console.log(country.name)}
-                        visible
-                    />
+            <View style={{ paddingHorizontal: 20 }}>
+                <View style={{
+                    backgroundColor: "#6922D10A", paddingHorizontal: 20, borderRadius: 20, paddingVertical: 10, width: 90, marginBottom: 10
+                }}>
+                    <CustomText style={{ fontSize: 14, color: Colors.primary, textAlign: 'left' }}>Step 2/3</CustomText>
                 </View>
-                <CustomText style={{ marginVertical: 10 }}>Address</CustomText>
-                <CustomTextInput placeholder="eg. Akute Avenue" />
-                <CustomText style={{ marginVertical: 10 }}>State</CustomText>
-                <CustomTextInput placeholder="eg. Lagos" />
-                <CustomText style={{ marginVertical: 10 }}>Create an Handle</CustomText>
-                <CustomTextInput placeholder="Create an Handle" left={
-                    <TextInput.Icon
-                        icon={() => <CustomTextInput style={{ fontSize: 10 }}>@</CustomTextInput>}
-                        onPress={() => {
-                            setSecureTextEntry(!secureTextEntry);
-                            return false;
-                        }}
-                        color={Colors.gray}
-                    />
-                } />
-
-                <Button title='Create Account' onPress={() => navigation.navigate("Verification")} br={6} h={50} color={Colors.white} bg={Colors.primary} mt={20} />
+                <CustomText style={styles.header}>Add Personal Information 📖</CustomText>
+                
+                <CustomText style={{ marginVertical: 10 }}>Full Name</CustomText>
+                <CustomTextInput placeholder="First Name" />
+                <CustomText style={{ marginVertical: 10 }}>Full Name</CustomText>
+                <CustomTextInput placeholder="Last Name" />
+                <CustomText style={{ marginVertical: 10 }}>Full Name</CustomText>
+                <CustomTextInput placeholder="Username" />
+                <Button title='Create Account' onPress={() => navigation.navigate("Login")} br={6} h={50} color={Colors.white} bg={Colors.primary} mt={20} />
             </View>
         </View>
     )
@@ -51,4 +39,12 @@ const UserDetails = ({ navigation }: any) => {
 
 export default UserDetails
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    header: {
+        fontSize: 16,
+        fontWeight: "500",
+        lineHeight: 32,
+        textAlign: "left",
+        marginBottom: 30
+    }
+})

@@ -1,10 +1,12 @@
-import { View, Image, ScrollView, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Image, ScrollView, TouchableOpacity, StyleSheet, Platform } from 'react-native'
 import React from 'react'
 import CustomHeader from '../../components/common/Header'
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Colors from '../../theme/colors';
 import CategoryPills from '../../components/dashboard/CategoryPills';
 import StreamCard from './streamCard';
+import CustomText from '../../components/common/CustomText';
+import { SafeAreaView } from 'react-native';
 
 const Dashboard = ({ navigation }: any) => {
 
@@ -15,62 +17,41 @@ const Dashboard = ({ navigation }: any) => {
 
     return (
         <ScrollView>
-            <CustomHeader
-                title=' '
-                leftIcon={<Image source={require("../../../assets/images/dashboard/user.png")} style={{ width: 40, height: 40 }} />}
-                onLeftPress={() => { }}
-                rightIcon={
-                    <View style={styles.righticon}>
-                        <TouchableOpacity onPress={() => navigation.navigate('notifications')}>
-                            <Image source={require("../../../assets/images/dashboard/notificationbing.png")} style={{ width: 20, height: 20 }} />
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={() => navigation.navigate('notifications')}>
-                            <Image source={require("../../../assets/images/dashboard/messagetext1.png")} style={{ width: 20, height: 20 }} />
-                        </TouchableOpacity>
+            <SafeAreaView >
+                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingVertical: Platform.OS === "android" ? 40 :20, paddingHorizontal: 20 }}>
+                    <View style={{ alignItems: "center", flexDirection: "row" }}>
+                        <Image source={require("../../../assets/images/dashboard/user.png")} style={{ width: 38, height: 38 }} />
+                        <View style={{ paddingLeft: 17 }}>
+                            <CustomText style={styles.subtext}>Welcome back  👋</CustomText>
+                            <CustomText style={styles.title}>@theezemmuo</CustomText>
+                        </View>
                     </View>
-                }
-                onRightPress={() => { }}
-            />
-            <CategoryPills categories={categories} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
-            <View style={styles.categorycontainer}>
-                <StreamCard
-                    // imageUri="https://via.placeholder.com/150"
-                    source={require("../../../assets/images/dashboard/VIDEO.png")}
-                    title="Global Music Limehouse"
-                    subtitle="@ezemmuo"
-                    viewersCount="1.2K views"
-                    islive
-                />
-                <StreamCard
-                    imageUri="https://via.placeholder.com/150"
-                    title="Global Music Limehouse"
-                    subtitle="@ezemmuo"
-                    viewersCount="1.2K views"
-                    islive={false}
-                />
+                    <View style={{ alignItems: "center", flexDirection: "row" }}>
+                        <Image source={require("../../../assets/images/dashboard/MESSAGE.png")} style={{ width: 38, height: 38 }} />
+                        <Image source={require("../../../assets/images/dashboard/NOTIFICATION.png")} style={{ width: 38, height: 38 }} />
+                    </View>
+                </View>
+            </SafeAreaView>
 
-            </View>
         </ScrollView>
     )
 }
 
 
 const styles = StyleSheet.create({
-    righticon: {
-        width: "100%",
-        flexDirection: "row",
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingTop: 8
+    title: {
+        fontSize: 16,
+        fontWeight: "500",
+        lineHeight: 32,
+        textAlign: "center",
     },
-    categorycontainer: {
-        width: '100%',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        alignItems: "center",
-        paddingHorizontal:"2%"
-    }
+    subtext: {
+        fontSize: 11,
+        fontWeight: "300",
+        lineHeight: 14,
+        textAlign: "left",
+        color: "#1D2329"
+    },
 })
 
 export default Dashboard
